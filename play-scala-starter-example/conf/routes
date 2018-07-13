@@ -1,0 +1,60 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(file)
+
+GET /hello                          controllers.HelloController.index
+
+
+GET   /files/*name                   controllers.DownloadController.show(name)
+
+# GET   /clients/:id                  controllers.Clients.show(id: Long)
+
+# Puede indicarle al archivo de rutas que use un enrutador diferente bajo un prefijo específico usando "->" seguido del prefijo dado:
+# ->      /api                        api.MyRouter
+# Esto es especialmente útil cuando se combina con el enrutamiento de interpolación de cadenas DSL también conocido como enrutamiento SIRD,
+# o cuando se trabaja con subproyectos que enrutan utilizando varios archivos de rutas.
+
+#Static path
+#For example, to exactly match incoming GET /clients/all requests, you can define this route:
+#GET   /clients/all          controllers.Clients.list()
+
+#Here for a request like GET /files/images/logo.png, the name dynamic part will capture the images/logo.png value.
+# GET   /files/*name          controllers.Application.download(name)
+
+
+#GET   /items/$id<[0-9]+>    controllers.Items.show(id: Long)
+#Just like with wildcard routes, the parameter is not decoded by the router or encoded by the reverse router.
+#You’re responsible for validating the input to make sure it makes sense in that context.
+
+# Extract the page parameter from the path.
+# GET   /:page                controllers.Application.show(page)
+
+
+
+#Play incluye un Defaultcontrolador que proporciona un puñado de acciones útiles. Estos se pueden invocar directamente desde el archivo de rutas:
+
+# Redirects to https://www.playframework.com/ with 303 See Other
+GET   /about      controllers.Default.redirect(to = "https://www.playframework.com/")
+
+# Responds with 404 Not Found
+#GET   /orders     controllers.Default.notFound
+
+# Responds with 500 Internal Server Error
+#GET   /clients    controllers.Default.internalServerError
+
+# Responds with 501 Not Implemented
+GET   /posts      controllers.Default.todo
+
+
+GET   /error500      controllers.Default.error
+
