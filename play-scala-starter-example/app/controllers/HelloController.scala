@@ -26,7 +26,7 @@ class HelloController @Inject()(config: Configuration, cc: ControllerComponents)
       2)   o implemented todavia
       def index(name:String) = TODO
 
-    }*/
+     */
 
   }
 

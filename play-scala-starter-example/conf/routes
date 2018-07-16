@@ -12,10 +12,15 @@ GET     /message                    controllers.AsyncController.message
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(file)
 
-GET /hello                          controllers.HelloController.index
+GET     /hello                      controllers.HelloController.index
+
+# Parqueadero
+POST  /parqueadero/                controllers.ParqueaderoController.ingreso
+PUT   /parqueadero/:placa          controllers.ParqueaderoController.salida(placa)
+GET   /parqueadero/                controllers.ParqueaderoController.vehiculosparqueados
 
 
-GET   /files/*name                   controllers.DownloadController.show(name)
+#GET   /files/*name                   controllers.DownloadController.show(name)
 
 # GET   /clients/:id                  controllers.Clients.show(id: Long)
 

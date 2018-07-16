@@ -13,3 +13,5 @@ crossScalaVersions := Seq("2.11.12", "2.12.6")
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.14"
+libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.9"
