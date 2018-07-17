@@ -1,6 +1,7 @@
 package dominio
 
-class Vehiculo(placa: String, tipoVehiculo: EnumTipoVehiculo.Value) {
+class Vehiculo(val placa: String, val tipoVehiculo: EnumTipoVehiculo.Value) {
 
+  override def toString(): String = "(" + placa + ", " + tipoVehiculo + ")"
 
 }
