@@ -7,6 +7,8 @@ import play.api.Logger
 import play.api.mvc._
 
 import dominio.RequestVehiculo
+import dominio.Vehiculo
+import dominio.EnumTipoVehiculo
 
 @Singleton
 class ParqueaderoController @Inject()(config: Configuration, cc: ControllerComponents) (implicit assetsFinder: AssetsFinder) extends AbstractController(cc) {
@@ -35,8 +37,15 @@ class ParqueaderoController @Inject()(config: Configuration, cc: ControllerCompo
   def vehiculosparqueados = Action {
     Logger.info("Vehiculos parqueados.")
 
+    val vehiculo = Vehiculo("XTZ12", EnumTipoVehiculo.CARRO)
+
     //Results.Ok
-    Ok(views.html.parqueadero("Vehiculos Parqueados" ))
+    Ok(views.html.parqueadero(List(vehiculo)))
+  }
+
+  def main = Action {
+    Logger.info("Pagina principal de parqueadero")
+    Ok(views.html.parkingsidebar())
   }
 
 }

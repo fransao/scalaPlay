@@ -19,6 +19,10 @@ POST  /parqueadero/                controllers.ParqueaderoController.ingreso
 PUT   /parqueadero/:placa          controllers.ParqueaderoController.salida(placa)
 GET   /parqueadero/                controllers.ParqueaderoController.vehiculosparqueados
 
+GET   /parkingsidebar/             controllers.ParqueaderoController.main
+
+# JSON
+GET  /testjson/                    controllers.JsonController.index
 
 #GET   /files/*name                   controllers.DownloadController.show(name)
 

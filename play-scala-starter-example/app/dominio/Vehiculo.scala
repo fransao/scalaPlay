@@ -1,6 +1,6 @@
 package dominio
 
-class Vehiculo(var placa: String, var tipoVehiculo: EnumTipoVehiculo.Value) {
+class Vehiculo(placa: String, tipoVehiculo: EnumTipoVehiculo.Value) {
 
 
 }

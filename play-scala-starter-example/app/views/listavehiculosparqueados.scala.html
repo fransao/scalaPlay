@@ -1,23 +1,12 @@
-@*
- * This template takes a two arguments, a String containing a
- * message to display and an AssetsFinder to locate static assets.
- *@
-@(message: String)(implicit assetsFinder: AssetsFinder)
+@(vehiculos: List[Vehiculo])
 
-@*
- * Call the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play", assetsFinder) {
+<h1>Vehiculos parqueados!</h1>
 
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    @welcome(message, style = "scala")
-
-}
+<ul>
+    @for(vehiculo <- vehiculos) {
+      <li>@vehiculo.getPlaca()</li>
+    }
+</ul>
 
 @*
 @(page: com.avaje.ebean.Page[Simple])
